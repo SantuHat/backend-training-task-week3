@@ -48,3 +48,16 @@ addPurchaseRecord("Bob", 12); >> 印出 console.log 文字為 新增購買記錄
 addPurchaseRecord("Charlie", 25); >> 印出 console.log 文字為 新增購買記錄成功！會員 Charlie 購買 25 堂課，總金額為 27500 元。
 addPurchaseRecord("Hannah", 50); >> 印出 console.log 文字為 新增購買記錄成功！會員 Hannah 購買 50 堂課，總金額為 55000 元。
 addPurchaseRecord("名稱", “課程數量”); >> 印出 console.log 文字為 輸入錯誤，請輸入有效的會員名稱和課程數量。 */
+
+
+
+// 第二階段
+function calculateTotalPrice(){
+  let totalPrice = 0;
+  purchaseRecords.forEach((item)=>{
+    totalPrice += item.totalPrice
+  })
+  console.log(`目前總營業額為 ${totalPrice} 元`);
+}
+
+calculateTotalPrice();
