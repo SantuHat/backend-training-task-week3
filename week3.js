@@ -61,3 +61,16 @@ function calculateTotalPrice(){
 }
 
 calculateTotalPrice();
+
+
+
+// 第三階段
+function filterNoPurchaseMember(){
+  const noPurchaseMembers = members.filter((member)=>{
+    // 如果 purchaseRecords 中「沒有」該會員的紀錄，則回傳 true，該會員會被 filter() 保留
+    return !purchaseRecords.some(item => item.name === member)
+  })
+  console.log(`未購買課程的會員有：${noPurchaseMembers}`);
+}
+
+filterNoPurchaseMember();
