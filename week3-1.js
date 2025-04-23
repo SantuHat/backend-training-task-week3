@@ -1,5 +1,16 @@
 let purchaseRecords = [];
 
+const members = [
+  'Alice',
+  'Bob',
+  'Charlie',
+  'Diana',
+  'Evan',
+  'Fiona',
+  'George',
+  'Hannah',
+];
+
 function addPurchaseRecord(name, courses) {
   // console.log(name,courses);
   // 防呆驗證
@@ -9,7 +20,7 @@ function addPurchaseRecord(name, courses) {
     typeof courses !== 'number' ||
     courses <= 0
   ) {
-    console.log('輸入錯誤，請輸入有效的會員名稱和課程數量');
+    // console.log('輸入錯誤，請輸入有效的會員名稱和課程數量');
     return;
   }
 
@@ -40,9 +51,9 @@ function addPurchaseRecord(name, courses) {
   // console.log(purchaseRecords);
 
   // 印出 console.log，印出「新增購買記錄成功！會員 [會員名稱] 購買 [數量] 堂課，總金額為 [金額] 元。」
-  console.log(
-    `新增購買記錄成功！會員 ${name} 購買 ${courses} 堂課，總金額為 ${totalPrice} 元。`
-  );
+  // console.log(
+  //   `新增購買記錄成功！會員 ${name} 購買 ${courses} 堂課，總金額為 ${totalPrice} 元。`
+  // );
 }
 
 addPurchaseRecord('Alice', 4);
@@ -54,9 +65,25 @@ addPurchaseRecord('Bob', -2);
 function calculateTotalPrice() {
   let totalPrice = 0;
   purchaseRecords.forEach((record) => {
-    console.log(record);
+    // console.log(record);
     totalPrice += record.totalPrice;
   });
-  console.log(totalPrice);
+  // console.log(totalPrice);
 }
 calculateTotalPrice();
+
+// 篩選出還沒有購課的會員
+function filterNoPurchaseMember() {
+  const purchaseMemberName = [];
+  purchaseRecords.forEach((record) => {
+    purchaseMemberName.push(record.name);
+  });
+  // console.log(purchaseMemberName);
+
+  const nopurchaseMemberName = members.filter((member) => {
+    return purchaseMemberName.includes(member) === false;
+  });
+  console.log(`未購買課程的會員有: ${nopurchaseMemberName}`);
+}
+
+filterNoPurchaseMember();
