@@ -1,0 +1,19 @@
+{
+  "name": "backend-training-task-week3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "week3-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantuHat/backend-training-task-week3.git"
+  },
+  "author": "xian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantuHat/backend-training-task-week3/issues"
+  },
+  "homepage": "https://github.com/SantuHat/backend-training-task-week3#readme"
+}
