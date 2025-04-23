@@ -49,4 +49,14 @@ addPurchaseRecord('Alice', 4);
 addPurchaseRecord('Bob', 12);
 addPurchaseRecord('Bob', -2);
 
-console.log(purchaseRecords);
+// console.log(purchaseRecords);
+
+function calculateTotalPrice() {
+  let totalPrice = 0;
+  purchaseRecords.forEach((record) => {
+    console.log(record);
+    totalPrice += record.totalPrice;
+  });
+  console.log(totalPrice);
+}
+calculateTotalPrice();
